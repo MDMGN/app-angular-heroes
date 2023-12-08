@@ -1,0 +1,28 @@
+nav ul{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav li{
+    list-style: none;
+}
+
+nav a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: inherit;
+}
+nav a:hover{
+    animation: LinkAnimated .5s ease-in;
+}
+
+@keyframes LinkAnimated {
+    80%{
+            font-size: 25px;
+    }
+}

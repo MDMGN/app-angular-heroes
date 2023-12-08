@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "Komi Kax";
+    src: url('./assets/fonts/KOMIKAX.ttf');
+}
+
+@font-face {
+    font-family: "Hey Comic";
+    src: url('./assets/fonts/HeyComic.ttf');
+}
+
+@font-face {
+    font-family: "Hiromi Sake";
+    src: url('./assets/fonts/HIROMISAKE.ttf');
+}
+:root{
+--font-base: "Komi Kax", Impact;
+--font-comic: "Hey Comic", Impact;
+--font-shonen: "Hiromi Sake", Impact;
+--color-background: #0f0f0f;
+--color-font: #fff
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 18px;
+    font-family: var(--font-base);
+}
+
+body{
+    background-color: var(--color-background);
+    border: 0;
+    margin: 0;
+    color: var(--color-font);
+}
