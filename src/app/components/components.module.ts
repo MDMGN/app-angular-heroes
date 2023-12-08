@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { PanelButtonComponent } from './panel-button/panel-button.component';
+import { CardComponent } from './card/card.component';
 
 
 
@@ -9,11 +10,13 @@ import { PanelButtonComponent } from './panel-button/panel-button.component';
   imports: [
     CommonModule,
     NgFor,
-    PanelButtonComponent
+    PanelButtonComponent,
+    CardComponent
   ],
   exports:[
     NgFor,
-    PanelButtonComponent
+    PanelButtonComponent,
+    CardComponent
   ]
 })
 export class ComponentsModule { }

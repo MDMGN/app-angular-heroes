@@ -1,9 +1,6 @@
-* {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
 .panel-btn{
+    height: 70%;
     border: thin solid #000;
-    height: 80%;
     background-color: rgba(0,0,0,.7);
     display: flex;
     justify-content: center;
@@ -16,21 +13,7 @@
 }
 
 .panel-btn:hover{
-    animation: btn-animated .5s ease-in-out ;
-    transition: animation .5s ease-in-out;
+    opacity: .7;
+    transform: scale(.95);
+    transition: all .2s ease-in;
 }
-
-@keyframes btn-animated {
-    20%,60%{
-        margin-top: 100px;
-        margin-right: 20px;
-        opacity: .7s;
-    }
-
-    40%,80%{
-        margin-bottom: 100px;
-        margin-left: 20px;
-        opacity: .9;
-    }
-}
-
