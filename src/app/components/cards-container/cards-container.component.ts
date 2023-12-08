@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { HeroComic } from '../../../types/hero-comics';
 import { ComponentsModule } from '../components.module';
+import { Hero } from '../../../types/hero';
 
 @Component({
   selector: 'app-cards-container',
@@ -10,5 +10,5 @@ import { ComponentsModule } from '../components.module';
   styleUrl: './cards-container.component.css'
 })
 export class CardsContainerComponent {
-@Input() heroes:HeroComic[]=[] as Array<HeroComic>
+@Input() heroes:Hero[]=[] as Array<Hero>
 }

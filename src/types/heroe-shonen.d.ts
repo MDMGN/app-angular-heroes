@@ -1,4 +1,4 @@
-export type HeroeShonen = {
+export type HeroShonen = {
     mal_id:     number;
     url:        string;
     images:     Images;
