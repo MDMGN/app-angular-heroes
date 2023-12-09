@@ -1,12 +1,14 @@
 export type HeroShonen = {
-    mal_id:     number;
-    url:        string;
-    images:     Images;
-    name:       string;
-    name_kanji: string;
-    nicknames:  any[];
-    favorites:  number;
-    about:      string;
+    data:{
+        mal_id:     number;
+        url:        string;
+        images:     Images;
+        name:       string;
+        name_kanji: string;
+        nicknames:  any[];
+        favorites:  number;
+        about:      string;
+    }
 }
 
 export type Images = {

@@ -15,10 +15,10 @@ export class ShonenComponent implements OnInit{
   constructor(private httHeroesShonen:HeroesShonenService){}
   ngOnInit(): void {
     this.httHeroesShonen.getHeroesShonenMixed().subscribe(heroes=>this.heroes=heroes.map(
-              ({name,images,name_kanji})=>({
-                name,
-                image_url:images.jpg.image_url,
-                publisher:name_kanji
+              (hero)=>({
+                name: hero.data.name,
+                image_url:hero.data.images.jpg.image_url,
+                publisher:hero.data.name_kanji
               })
     ))
   }
