@@ -13,9 +13,10 @@ import { Hero } from '../../../types/hero';
 export class ShonenComponent implements OnInit{
   public heroes:Array<Hero>= [] as Hero[]
   public loading:boolean=true;
-  constructor(private httHeroesShonen:HeroesShonenService){}
+  public search:string=''
+  constructor(private httpHeroesShonen:HeroesShonenService){}
   ngOnInit(): void {
-    this.httHeroesShonen.getHeroesShonenMixed().subscribe(heroes=>{
+    this.httpHeroesShonen.getHeroesShonenMixed().subscribe(heroes=>{
       this.heroes=heroes.map(
         (hero)=>({
           name: hero.data.name,
@@ -24,6 +25,19 @@ export class ShonenComponent implements OnInit{
         }))
         this.loading=false;
     })
+  }
+  onChangeSearch(search:string){
+    this.httpHeroesShonen.getSearchHeroesShonen(search).subscribe(heroes=>{
+      this.loading=true;
+      this.heroes=heroes.data.map(
+        (hero)=>({
+          name: hero.name,
+          image_url:hero.images.jpg.image_url,
+          publisher:hero.name_kanji
+        }))
+        this.loading=false;
+    }
+    )
   }
 
 }

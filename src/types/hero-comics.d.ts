@@ -9,6 +9,11 @@ export type HeroComic = {
     connections: Connections;
     image:       Image;
 }
+export type HeroComicSearch={
+    response: string,
+    results:HeroComic[],
+    "results-for":string 
+}
 
 export type Appearance = {
     gender:       string;

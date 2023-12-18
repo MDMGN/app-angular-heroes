@@ -35,4 +35,16 @@ export class ComicsComponent implements OnInit{
                           this.loading=false;
                       });
   }
+  onChangeSearch(search:string){
+    this.httpHeroes.getSearchHeroByName(search).subscribe(heroes=>{
+      this.loading=true;
+      this.heroes=heroes.results.map(
+        ({name,image,biography})=>({
+          name,
+          publisher:biography.publisher,
+          image_url:image.url
+        }))
+        this.loading=false;
+    })
+  }
 }

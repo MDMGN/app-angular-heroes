@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { forkJoin, Observable } from 'rxjs';
-import { HeroShonen } from '../../types/heroe-shonen';
+import { HeroShonen,HeroShonenSearch } from '../../types/heroe-shonen';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,8 @@ export class HeroesShonenService {
       return forkJoin(arrHeroes.map(_=>this.http.get<HeroShonen>('https://api.jikan.moe/v4/random/characters')))
   }
 
-  getSearchHeroesShonen(name:string):Observable<HeroShonen[]>{
-    return this.http.get<HeroShonen[]>(`https://api.jikan.moe/v4/characters?q=${name}`)
-}
+  getSearchHeroesShonen(name:string):Observable<HeroShonenSearch>{
+    return this.http.get<HeroShonenSearch>(`https://api.jikan.moe/v4/characters?q=${name}`)
+  }
   
 }

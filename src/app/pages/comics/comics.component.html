@@ -1,2 +1,3 @@
 <app-panel-container [panelbuttons]="btns"/>
+<app-search (searchEmit)="onChangeSearch($event)" />
 <app-cards-container [loading]="loading" [heroes]="heroes"/>

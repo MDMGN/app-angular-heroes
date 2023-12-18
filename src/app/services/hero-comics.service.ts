@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, forkJoin } from 'rxjs';
-import { HeroComic } from '../../types/hero-comics';
+import { HeroComic, HeroComicSearch } from '../../types/hero-comics';
 
 @Injectable({
   providedIn: 'root'
@@ -47,7 +47,7 @@ export class HeroComicsService {
     return this.http.get<HeroComic>(`https://www.superheroapi.com/api.php/5951652661611246/${id}/biography/publisher`);
   }
 
-  getSearchHeroByName(name:string):Observable<HeroComic>{
-    return this.http.get<HeroComic>(`https://www.superheroapi.com/api.php/5951652661611246/search/${name}`);
+  getSearchHeroByName(name:string):Observable<HeroComicSearch>{
+    return this.http.get<HeroComicSearch>(`https://www.superheroapi.com/api.php/5951652661611246/search/${name}`);
   }
 }

@@ -11,6 +11,20 @@ export type HeroShonen = {
     }
 }
 
+export type HeroShonenSearch = {
+       data:Array<{
+        mal_id:     number;
+        url:        string;
+        images:     Images;
+        name:       string;
+        name_kanji: string;
+        nicknames:  any[];
+        favorites:  number;
+        about:      string;
+   }>,
+       pagination:any
+}
+
 export type Images = {
     jpg:  Jpg;
     webp: Webp;
