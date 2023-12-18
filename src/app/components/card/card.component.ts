@@ -9,6 +9,6 @@ import { Hero } from '../../../types/hero';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  @Input() public props:Hero={} as Hero
+  @Input() public props!:Hero;
   
 }

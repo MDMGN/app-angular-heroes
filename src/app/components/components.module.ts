@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule, NgClass, NgFor } from '@angular/common';
 import { PanelButtonComponent } from './panel-button/panel-button.component';
 import { CardComponent } from './card/card.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -10,13 +11,17 @@ import { CardComponent } from './card/card.component';
   imports: [
     CommonModule,
     NgFor,
+    NgClass,
     PanelButtonComponent,
-    CardComponent
+    CardComponent,
+    LoaderComponent,
   ],
   exports:[
     NgFor,
+    NgClass,
     PanelButtonComponent,
-    CardComponent
+    CardComponent,
+    LoaderComponent,
   ]
 })
 export class ComponentsModule { }

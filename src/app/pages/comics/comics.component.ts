@@ -16,6 +16,7 @@ export class ComicsComponent implements OnInit{
   private btnDC:PanelButtonModel;
   public btns:PanelButtonModel[];
   public heroes:Hero[]=[] as Array<Hero>;
+  public loading:boolean=true;
 
   constructor(private httpHeroes:HeroComicsService){
     this.btnMarvel=new PanelButtonModel("marvel","#ff0000","comics/marvel")
@@ -24,12 +25,14 @@ export class ComicsComponent implements OnInit{
   }
   ngOnInit(): void {
       this.httpHeroes.getHeroesByPages()
-                      .subscribe(heroes=>this.heroes=heroes.map(
-                            ({name,image,biography})=>({
-                              name,
-                              publisher:biography.publisher,
-                              image_url:image.url
-                            })
-                      ));
+                      .subscribe(heroes=>{
+                        this.heroes=heroes.map(
+                          ({name,image,biography})=>({
+                            name,
+                            publisher:biography.publisher,
+                            image_url:image.url
+                          }))
+                          this.loading=false;
+                      });
   }
 }

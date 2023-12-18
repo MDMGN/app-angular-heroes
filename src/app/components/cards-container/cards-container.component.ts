@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { ComponentsModule } from '../components.module';
 import { Hero } from '../../../types/hero';
 
@@ -10,5 +10,6 @@ import { Hero } from '../../../types/hero';
   styleUrl: './cards-container.component.css'
 })
 export class CardsContainerComponent {
-@Input() heroes:Hero[]=[] as Array<Hero>
+@Input() heroes!:Hero[];
+@Input() loading!:boolean;
 }

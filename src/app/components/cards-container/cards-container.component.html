@@ -1,5 +1,12 @@
-<div class="cards">
-    <ng-container *ngFor="let hero of heroes">
-        <app-card  [props]="hero"/>
-    </ng-container>
+<div class="cards" [ngClass]="{
+    'loader-container': loading
+}">
+
+    @defer(on immediate){
+        <ng-container *ngFor="let hero of heroes">
+            <app-card  [props]="hero"/>
+        </ng-container>
+    }@loading(minimum 100ms){
+        <app-loader />
+    }
 </div>
