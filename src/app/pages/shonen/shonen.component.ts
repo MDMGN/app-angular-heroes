@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PagesModule } from '../pages.module';
 import { HeroesShonenService } from '../../services/heroes-shonen.service';
 import { Hero } from '../../../types/hero';
+import { catchError } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-shonen',
@@ -27,7 +29,9 @@ export class ShonenComponent implements OnInit{
     })
   }
   onChangeSearch(search:string){
-    this.httpHeroesShonen.getSearchHeroesShonen(search).subscribe(heroes=>{
+    this.httpHeroesShonen.getSearchHeroesShonen(search)
+    .subscribe(heroes=>{
+      console.log(heroes)
       this.loading=true;
       this.heroes=heroes.data.map(
         (hero)=>({
@@ -36,8 +40,9 @@ export class ShonenComponent implements OnInit{
           publisher:hero.name_kanji
         }))
         this.loading=false;
+    },err=>{
+      console.log(err)
     }
     )
   }
-
 }

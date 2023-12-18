@@ -9,10 +9,7 @@ import { PanelButtonModel } from '../../models/panel-button.model';
   templateUrl: './panel-container.component.html',
   styleUrl: './panel-container.component.css'
 })
-export class PanelContainerComponent implements OnInit{
+export class PanelContainerComponent{
   @Input() public panelbuttons:PanelButtonModel[]=[]
-  ngOnInit(): void {
-    console.log(this.panelbuttons)
-  }
 
 }
