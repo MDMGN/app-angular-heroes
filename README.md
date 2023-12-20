@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Apis implements
 [Jikan](https://docs.api.jikan.moe) version 4
 
-[SuperHeroesApi](www.superheroapi.com)
+[SuperHeroesApi](https://www.superheroapi.com)
 
 ## Development server
 
