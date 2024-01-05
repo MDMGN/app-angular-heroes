@@ -1,11 +1,10 @@
 .panel-btn{
     height: 70%;
-    border: thin solid #000;
-    background-color: rgba(0,0,0,.7);
+    border: thick solid #000;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
     font-weight: bold;
     font-size: 3rem;
     cursor: pointer;

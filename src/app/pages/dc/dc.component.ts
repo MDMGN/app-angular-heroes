@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HeroComicsService } from '../../services/hero-comics.service';
 
 @Component({
   selector: 'app-dc',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
   templateUrl: './dc.component.html',
   styleUrl: './dc.component.css'
 })
-export class DcComponent {
+export class DcComponent implements OnInit{
+
+  constructor(private httpHeroes:HeroComicsService){}
+  ngOnInit(): void {
+    this.httpHeroes.getHeroesByPages().subscribe()
+  }
 
 }

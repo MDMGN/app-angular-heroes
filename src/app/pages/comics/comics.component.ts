@@ -19,8 +19,8 @@ export class ComicsComponent implements OnInit{
   public loading:boolean=true;
 
   constructor(private httpHeroes:HeroComicsService){
-    this.btnMarvel=new PanelButtonModel("marvel","#ff0000","comics/marvel")
-    this.btnDC=new PanelButtonModel("dc","#0000ff","comics/dc");
+    this.btnMarvel=new PanelButtonModel("marvel","#ffffff","#ff0000","comics/marvel")
+    this.btnDC=new PanelButtonModel("dc","#0000ff","#ffffff","comics/dc");
     this.btns=[this.btnDC,this.btnMarvel];
   }
   ngOnInit(): void {
